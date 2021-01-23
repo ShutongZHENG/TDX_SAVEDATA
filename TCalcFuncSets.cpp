@@ -140,7 +140,7 @@ BOOL RegisterTdxFunc(PluginTCalcFuncInfo** pFun)
 BOOL funSaveDATA(LPCTSTR SaveDATA, DWORD dword_param_BufferSize) {
 	HANDLE handle_File = NULL;
 	DWORD dword_NumberOfBytesToWrite = 0;
-	handle_File = CreateFile(L"D:\DATA_YEAR.txt",
+	handle_File = CreateFile(L"D:\DATA.txt",
 		GENERIC_READ | GENERIC_WRITE,
 		FILE_SHARE_WRITE,
 		NULL,
@@ -160,7 +160,7 @@ BOOL funSaveDATA(LPCTSTR SaveDATA, DWORD dword_param_BufferSize) {
 		if (handle_File == INVALID_HANDLE_VALUE)
 		{
 
-			return false;
+			return FALSE;
 		}
 		else
 		{
@@ -187,7 +187,7 @@ BOOL funSaveDATA(LPCTSTR SaveDATA, DWORD dword_param_BufferSize) {
 
 	CloseHandle(handle_File);
 
-	return true;
+	return TRUE;
 
 }
 
