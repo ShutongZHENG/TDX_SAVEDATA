@@ -12,7 +12,6 @@ struct DATA_Stock
 	float Date;
 	float Open;
 	float Close;
-
 };
 
 static std::vector<DATA_Stock> DataStock;
@@ -45,16 +44,13 @@ void TestPlugin1(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 */
 void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc)
 {
-	
 	for (int i = 0; i < DataLen; i++)
 	{
 		DataStock[i].Open = pfINb[i];
 		DataStock[i].Close = pfINc[i];
 	}
 
-
-
-	}
+}
 
 
 
@@ -66,13 +62,10 @@ void TestPlugin2(int DataLen,float* pfOUT,float* pfINa,float* pfINb,float* pfINc
 void TestPlugin3(int DataLen, float* pfOUT, float* pfINa, float* pfINb, float* pfINc)
 {
 	
-
 	for (int i = 0; i < DataLen; i++)
 	{
 		DataStock[i].Date = pfINb[i];
 	}
-
-
 }
 
 
@@ -149,7 +142,7 @@ BOOL funSaveDATA(LPCTSTR SaveDATA, DWORD dword_param_BufferSize) {
 		NULL);
 	if (handle_File == INVALID_HANDLE_VALUE)
 	{
-		handle_File = CreateFile(L"D:\DATA_YEAR.txt",
+		handle_File = CreateFile(L"D:\DATA.txt",
 			GENERIC_READ | GENERIC_WRITE,
 			FILE_SHARE_WRITE,
 			NULL,
